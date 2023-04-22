@@ -1,0 +1,17 @@
+<mat-form-field>
+    <mat-label>Choose a team:</mat-label>
+    <mat-select id="teamSelect">
+        <mat-option *ngFor="let team of teamList" (click)="changeSelectedTeam(team)" [value]="team.full_name">
+            {{team.full_name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<button mat-flat-button id="trackBtn" (click)="track()" color="primary">Track team</button>
+<div *ngIf="duplicated">The team {{selectedTeam.full_name}} is already tracked</div>
+<div *ngIf="added">The team {{selectedTeam.full_name}} is now tracked</div>
+
+<mat-grid-list cols="2" rowHeight="2.5:1">
+    <mat-grid-tile *ngFor="let tracked of trackedTeams">
+        <app-team-card  [team]="tracked" [trackedList]="trackedTeams"></app-team-card>
+    </mat-grid-tile>
+</mat-grid-list>
