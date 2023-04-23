@@ -4,5 +4,4 @@ export class Meta{
     next_page?: number;
     per_page?: number;
     total_count?: number;
-
 }

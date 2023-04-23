@@ -1,7 +1,6 @@
 import { Team } from "./team"
 
 export class Game {
-    
     id?: number;
     date?: Date;
     home_team?: Team;
@@ -12,6 +11,5 @@ export class Game {
     status?: string;
     time?: string;
     visitor_team?: Team;
-    visitor_team_score?: number;
-    
+    visitor_team_score?: number;   
 }
