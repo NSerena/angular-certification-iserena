@@ -23,7 +23,7 @@ export class GamesServiceService {
 
   getDates() {
     this.dates = []
-    let today: Date = new Date('Sun Oct 30 2022 14:20:21') //DATE TO GET DATA FROM API IN ALL CASES
+    let today: Date = new Date //new Date('Sun Oct 30 2022 14:20:21') //DATE TO GET DATA FROM API IN ALL CASES
     for (let i = 0; i < 12; i++) {
       let str: string = today.toISOString().split('T')[0];
       let newStr: string = str.replace(/[\/]/g, '-');
