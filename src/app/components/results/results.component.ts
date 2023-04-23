@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from 'src/app/model/game';
-import { Result } from 'src/app/model/result';
-import { Team } from 'src/app/model/team';
-import { GamesServiceService } from 'src/app/services/games-service.service';
-import { TeamsServiceService } from 'src/app/services/teams-service.service';
+import { Game } from '../../model/game';
+import { Result } from '../../model/result';
+import { Team } from '../../model/team';
+import { GamesServiceService } from '../../services/games-service.service';
+import { TeamsServiceService } from '../../services/teams-service.service';
 
 @Component({
   selector: 'app-results',
@@ -59,5 +59,4 @@ export class ResultsComponent implements OnInit {
       }
     }
   }
-
 }

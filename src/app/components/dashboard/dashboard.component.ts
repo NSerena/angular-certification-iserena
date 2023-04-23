@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamResponse } from 'src/app/model/team-response';
-import { Team } from 'src/app/model/team';
-import { TeamsServiceService } from 'src/app/services/teams-service.service';
-import { GamesServiceService } from 'src/app/services/games-service.service';
+import { TeamResponse } from '../../model/team-response';
+import { Team } from '../../model/team';
+import { TeamsServiceService } from '../../services/teams-service.service';
+import { GamesServiceService } from '../../services/games-service.service';
 
 @Component({
   selector: 'app-dashboard',

@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Team } from 'src/app/model/team';
-import { Game } from 'src/app/model/game';
-import { GameResponse } from 'src/app/model/game-response';
-import { GamesServiceService } from 'src/app/services/games-service.service';
-import { TeamsServiceService } from 'src/app/services/teams-service.service';
+import { Team } from '../../model/team';
+import { Game } from '../../model/game';
+import { GamesServiceService } from '../../services/games-service.service';
+import { TeamsServiceService } from '../../services/teams-service.service';
 
 @Component({
   selector: 'app-team-card',
