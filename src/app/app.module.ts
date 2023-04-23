@@ -30,13 +30,13 @@ import { TeamCardComponent } from './components/team-card/team-card.component';
     AppRoutingModule,
     NoopAnimationsModule,
     HttpClientModule,
-    MatSelectModule,
-    MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatFormFieldModule,
+    MatGridListModule,
     MatIconModule,
-    MatGridListModule
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

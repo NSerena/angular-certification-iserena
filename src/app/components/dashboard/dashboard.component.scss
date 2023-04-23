@@ -1,3 +1,9 @@
-button{
-    margin-left:10px;
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    .cardContainer {
+        width: fit-content;
+        margin: 10px;
+    }
 }

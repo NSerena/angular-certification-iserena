@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TeamResponse } from 'src/app/model/team-response';
 import { Team } from 'src/app/model/team';
 import { TeamsServiceService } from 'src/app/services/teams-service.service';
+import { GamesServiceService } from 'src/app/services/games-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,14 +11,12 @@ import { TeamsServiceService } from 'src/app/services/teams-service.service';
 })
 export class DashboardComponent implements OnInit {
 
-  teamList: Team[] = []
-  trackedTeams: Team[] = []
-  selectedTeam!: Team
+  teamList: Team[] = [];
+  storagedTeams: Team[] = [];
+  trackedTeams: Team[] = this.storagedTeams;
+  selectedTeam!: Team;
 
-  duplicated: boolean = false;
-  added: boolean = false;
-
-  constructor(private _teamsService: TeamsServiceService) { }
+  constructor(private _teamsService: TeamsServiceService, private _gamesService: GamesServiceService) { }
 
   ngOnInit(): void {
     this._teamsService.getTeams().subscribe((res: TeamResponse) => {
@@ -25,6 +24,12 @@ export class DashboardComponent implements OnInit {
         this.teamList = res.data;
       }
     })
+    this.storagedTeams = this._teamsService.getStoragedTeams()
+    if(this.storagedTeams!= undefined){
+      this.storagedTeams.forEach(id => {
+        this.trackedTeams.push(id);
+      });
+    }
   }
 
   changeSelectedTeam(data: Team) {
@@ -34,13 +39,8 @@ export class DashboardComponent implements OnInit {
   track() {
     let teamExists = this.trackedTeams.some((e: Team) => (e.full_name === this.selectedTeam.full_name))
     if (this.selectedTeam != undefined) {
-      if (teamExists) {
-        this.duplicated = true;
-        this.added = false;
-      } else {
-        this.duplicated = false;
-        this.added = true;
-        this.trackedTeams.push(this.selectedTeam)
+      if (!teamExists) {
+        this.trackedTeams.push(this.selectedTeam);
       }
     }
   }

@@ -1,1 +1,19 @@
-<p>results works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{team.full_name}}[{{team.abbreviation}}]</mat-card-title>
+        <mat-card-subtitle>{{team.conference}}ern conference</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <tr>
+        Scores of past 12 days:
+    </tr>
+
+   <tr *ngFor="let result of resultList">
+    <b>{{result.home_team}}</b> {{result.home_team_score}} - {{result.visitor_team_score}} <b>{{result.visitor_team}}</b>
+   </tr>
+    <mat-card-actions>
+        <tr>
+            <button mat-raised-button id="backBtn" [routerLink]="['']"><< Back to all team stats</button>
+        </tr>
+    </mat-card-actions>
+</mat-card>

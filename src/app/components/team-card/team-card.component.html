@@ -1,8 +1,7 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>{{team.full_name}}[{{team.abbreviation}}]</mat-card-title>
-        <button mat-icon-button id="remove{{team.abbreviation}}"
-            color="primary" (click)="remove(team)">
+        <button mat-icon-button id="remove{{team.abbreviation}}" color="primary" (click)="remove(team)">
             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home">
                 close
             </mat-icon>
@@ -10,4 +9,33 @@
         <mat-card-subtitle>{{team.conference}}ern conference</mat-card-subtitle>
     </mat-card-header>
     <mat-divider></mat-divider>
+    <table>
+        <tr>
+            <th>Results of past 12 days:
+        <tr>
+            <div class="resultsContainer">
+                <div *ngFor="let result of results">
+                    <div [ngClass]="{'win': result === 'W', 'lose' : result === 'L' }">
+                        {{result}}
+                    </div>
+                </div>
+            </div>
+        </tr>
+        <tr>
+            <th> Average points scored:{{avgScored}}</th>
+        </tr>
+        <tr>
+            <th>Average points conceded:{{avgConceded}}</th>
+        </tr>
+        </th>
+        <th>
+            <img src="https://interstate21.com/nba-logos/{{team.abbreviation}}.png" width="200px">
+        </th>
+        </tr>
+        <mat-card-actions>
+            <tr>
+                <button mat-raised-button id="remove{{team.abbreviation}}" (click)="storageTeams()" [routerLink]="['results',team.abbreviation]">See game results >></button>
+            </tr>
+        </mat-card-actions>
+    </table>
 </mat-card>

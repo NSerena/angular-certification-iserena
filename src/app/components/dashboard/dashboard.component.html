@@ -7,11 +7,8 @@
     </mat-select>
 </mat-form-field>
 <button mat-flat-button id="trackBtn" (click)="track()" color="primary">Track team</button>
-<div *ngIf="duplicated">The team {{selectedTeam.full_name}} is already tracked</div>
-<div *ngIf="added">The team {{selectedTeam.full_name}} is now tracked</div>
-
-<mat-grid-list cols="2" rowHeight="2.5:1">
-    <mat-grid-tile *ngFor="let tracked of trackedTeams">
-        <app-team-card  [team]="tracked" [trackedList]="trackedTeams"></app-team-card>
-    </mat-grid-tile>
-</mat-grid-list>
+<div class="flex">
+    <div *ngFor="let tracked of trackedTeams" class="cardContainer">
+        <app-team-card [team]="tracked" [trackedList]="trackedTeams"></app-team-card>
+    </div>
+</div>
