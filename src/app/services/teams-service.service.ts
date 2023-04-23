@@ -17,7 +17,7 @@ export class TeamsServiceService {
 
   params = new HttpParams().set('per_page', 45)
 
-  storagedTeams!: Team[];
+  storagedTeams!: Team[]; 
   storagedTrackedTeam!: Team;
 
   constructor(private _httpClient: HttpClient) { }
