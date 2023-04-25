@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  changeSelectedTeam(data: Team) {
+  changeSelectedTeam(data: Team): void {
     this.selectedTeam = data;
   }
 

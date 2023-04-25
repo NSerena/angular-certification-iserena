@@ -31,12 +31,12 @@ export class TeamCardComponent implements OnInit {
     })
   }
 
-  remove(toRemove: Team):void {
+  remove(toRemove: Team): void {
     let index = this.trackedList.indexOf(toRemove);
     this.trackedList.splice(index, 1);
   }
 
-  getResults():void {
+  getResults(): void {
     let teamPoints: number | undefined = 0;
     let rivalPoints: number | undefined = 0;
     let totalScoredPoints: number | undefined = 0;
@@ -65,7 +65,7 @@ export class TeamCardComponent implements OnInit {
     this.avgConceded = Math.round(totalConcededPoints / this.gameList.length);
   }
 
-  storageTeams(){
+  storageTeams(): void{
     this._teamsService.storageTeams(this.trackedList);
     this._teamsService.storageTrackedTeam(this.team);
   }

@@ -9,6 +9,9 @@ import { Team } from '../model/team';
 })
 export class TeamsServiceService {
 
+  storagedTeams!: Team[]; 
+  storagedTrackedTeam!: Team;
+  
   private baseUrl: string = 'https://free-nba.p.rapidapi.com';
 
   headers = new HttpHeaders()
@@ -17,8 +20,6 @@ export class TeamsServiceService {
 
   params = new HttpParams().set('per_page', 45)
 
-  storagedTeams!: Team[]; 
-  storagedTrackedTeam!: Team;
 
   constructor(private _httpClient: HttpClient) { }
 

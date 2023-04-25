@@ -8,14 +8,14 @@ import { Team } from '../model/team';
   providedIn: 'root'
 })
 export class GamesServiceService {
+  
+  dates: string[] = [];
 
   private baseUrl: string = 'https://free-nba.p.rapidapi.com';
 
   headers = new HttpHeaders()
     .set('X-RapidAPI-Key', '8517a80e24mshb56fb3e850506a2p113d9bjsn6e88de3085b3')
     .set('X-RapidAPI-Host', 'free-nba.p.rapidapi.com');
-
-  dates: string[] = [];
 
 
   params = new HttpParams()
