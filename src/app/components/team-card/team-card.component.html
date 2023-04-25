@@ -22,10 +22,10 @@
             </div>
         </tr>
         <tr>
-            <th> Average points scored:{{avgScored}}</th>
+            <th> Average points scored: {{avgScored}}</th>
         </tr>
         <tr>
-            <th>Average points conceded:{{avgConceded}}</th>
+            <th>Average points conceded: {{avgConceded}}</th>
         </tr>
         </th>
         <th>
@@ -34,7 +34,7 @@
         </tr>
         <mat-card-actions>
             <tr>
-                <button mat-raised-button id="remove{{team.abbreviation}}" (click)="storageTeams()" [routerLink]="['results',team.abbreviation]">See game results >></button>
+                <button mat-raised-button id="results{{team.abbreviation}}" (click)="storageTeams()" [routerLink]="['results',team.abbreviation]">See game results >></button>
             </tr>
         </mat-card-actions>
     </table>

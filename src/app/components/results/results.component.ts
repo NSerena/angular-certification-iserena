@@ -34,7 +34,7 @@ export class ResultsComponent implements OnInit {
     })
   }
 
-  getResults() {
+  getResults(): void {
     for (let i = 0; i < this.gameList.length; i++) {
       if (this.gameList[i].home_team?.id != undefined) {
         if (this.gameList[i].home_team?.id == this.team.id) { //IF TEAM IS HOME

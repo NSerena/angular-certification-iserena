@@ -26,19 +26,19 @@ export class TeamsServiceService {
     return this._httpClient.get<TeamResponse>(`${this.baseUrl}/teams`, { 'headers': this.headers, 'params': this.params });
   }
 
-  getStoragedTeams(){
+  getStoragedTeams(): Team[]{
     return this.storagedTeams;
   }
 
-  storageTeams(input: Team[]) {
+  storageTeams(input: Team[]): void {
     this.storagedTeams = input;
   }
 
-  getStoragedTrackedTeam(){
+  getStoragedTrackedTeam(): Team{
     return this.storagedTrackedTeam;
   }
 
-  storageTrackedTeam(input: Team){
+  storageTrackedTeam(input: Team): void{
     this.storagedTrackedTeam = input;
   }
 

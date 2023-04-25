@@ -31,12 +31,12 @@ export class TeamCardComponent implements OnInit {
     })
   }
 
-  remove(toRemove: Team) {
+  remove(toRemove: Team):void {
     let index = this.trackedList.indexOf(toRemove);
     this.trackedList.splice(index, 1);
   }
 
-  getResults() {
+  getResults():void {
     let teamPoints: number | undefined = 0;
     let rivalPoints: number | undefined = 0;
     let totalScoredPoints: number | undefined = 0;

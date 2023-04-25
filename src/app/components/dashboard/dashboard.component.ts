@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
     this.selectedTeam = data;
   }
 
-  track() {
+  track(): void {
     let teamExists = this.trackedTeams.some((e: Team) => (e.full_name === this.selectedTeam.full_name))
     if (this.selectedTeam != undefined) {
       if (!teamExists) {

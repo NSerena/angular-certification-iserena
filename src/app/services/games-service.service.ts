@@ -21,7 +21,7 @@ export class GamesServiceService {
   params = new HttpParams()
     .set('per_page', 12)
 
-  getDates() {
+  getDates(): void {
     this.dates = []
     let today: Date = new Date
     for (let i = 0; i < 12; i++) {
