@@ -16,6 +16,7 @@ export class TeamCardComponent implements OnInit {
 
   gameList: Game[] = [];
   results: string[] = [];
+  noGames: boolean = false;
   avgScored: number = 0;
   avgConceded: number = 0;
 
@@ -60,6 +61,9 @@ export class TeamCardComponent implements OnInit {
           this.results.push('L');
         }
       }
+    }
+    if (this.results.length == 0){
+      this.noGames = true;
     }
     this.avgScored = Math.round(totalScoredPoints / this.gameList.length); //AVERAGE POINTS CALCULATOR
     this.avgConceded = Math.round(totalConcededPoints / this.gameList.length);
