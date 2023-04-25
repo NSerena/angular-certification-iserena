@@ -51,9 +51,9 @@ export class ResultsComponent implements OnInit {
           this.rivalPoints = this.gameList[i].home_team_score;
           this.resultList.push({
             home_team: this.gameList[i].home_team?.abbreviation,
-            home_team_score: this.teamPoints,
+            home_team_score: this.rivalPoints,
             visitor_team: this.gameList[i].visitor_team?.abbreviation,
-            visitor_team_score: this.rivalPoints
+            visitor_team_score: this.teamPoints
           })
         }
       }
