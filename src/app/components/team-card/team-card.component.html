@@ -13,10 +13,7 @@
         <tr>
             <th>Results of past 12 days:
         <tr>
-            <div *ngIf="noGames">
-                {{team.full_name}} hasn't played in the last 12 days
-            </div>
-            <div class="resultsContainer" *ngIf="!noGames">
+            <div class="resultsContainer">
                 <div *ngFor="let result of results">
                     <div [ngClass]="{'win': result === 'W', 'lose' : result === 'L' }">
                         {{result}}
@@ -25,10 +22,10 @@
             </div>
         </tr>
         <tr>
-            <th *ngIf="!noGames"> Average points scored:{{avgScored}}</th>
+            <th> Average points scored:{{avgScored}}</th>
         </tr>
         <tr>
-            <th *ngIf="!noGames">Average points conceded:{{avgConceded}}</th>
+            <th>Average points conceded:{{avgConceded}}</th>
         </tr>
         </th>
         <th>
@@ -36,7 +33,7 @@
         </th>
         </tr>
         <mat-card-actions>
-            <tr *ngIf="!noGames">
+            <tr>
                 <button mat-raised-button id="remove{{team.abbreviation}}" (click)="storageTeams()" [routerLink]="['results',team.abbreviation]">See game results >></button>
             </tr>
         </mat-card-actions>
